@@ -11,10 +11,10 @@ import UIKit
 
 // MARK: main scrren info
  /// 屏幕bounds
-public let MainScrrenBounds = UIScreen.mainScreen().bounds
+public let BGMainScrrenBounds = UIScreen.mainScreen().bounds
  /// 屏幕大小
-public let MainScrrenSize = UIScreen.mainScreen().bounds.size
+public let BGMainScrrenSize = UIScreen.mainScreen().bounds.size
  /// 屏幕宽度
-public let MainScreenWidth = UIScreen.mainScreen().bounds.width
+public let BGMainScreenWidth = UIScreen.mainScreen().bounds.width
  /// 屏幕高度
-public let MainScreenHeight = UIScreen.mainScreen().bounds.height
+public let BGMainScreenHeight = UIScreen.mainScreen().bounds.height

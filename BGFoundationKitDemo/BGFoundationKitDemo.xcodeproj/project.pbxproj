@@ -18,12 +18,11 @@
 		CE0B69121BE36657006983F1 /* BGBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B69071BE36657006983F1 /* BGBaseViewController.swift */; };
 		CE0B69131BE36657006983F1 /* BGConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B69081BE36657006983F1 /* BGConstant.swift */; };
 		CE0B69141BE36657006983F1 /* BGUtilFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B69091BE36657006983F1 /* BGUtilFunction.swift */; };
-		CE0B69151BE36657006983F1 /* CGRect+BGExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B690B1BE36657006983F1 /* CGRect+BGExtension.swift */; };
-		CE0B69161BE36657006983F1 /* UICollectionViewCell+BGExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B690C1BE36657006983F1 /* UICollectionViewCell+BGExtension.swift */; };
-		CE0B69171BE36657006983F1 /* UIImage+BGExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B690D1BE36657006983F1 /* UIImage+BGExtension.swift */; };
-		CE0B69181BE36657006983F1 /* UITableViewCell+BGExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B690E1BE36657006983F1 /* UITableViewCell+BGExtension.swift */; };
-		CE0B69191BE36657006983F1 /* UIView+BGExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B690F1BE36657006983F1 /* UIView+BGExtension.swift */; };
-		CE0B691A1BE36657006983F1 /* UIViewController+BGExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B69101BE36657006983F1 /* UIViewController+BGExtension.swift */; };
+		CE0B69151BE36657006983F1 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B690B1BE36657006983F1 /* CGRect.swift */; };
+		CE0B69161BE36657006983F1 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B690C1BE36657006983F1 /* UICollectionViewCell.swift */; };
+		CE0B69171BE36657006983F1 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B690D1BE36657006983F1 /* UIImage.swift */; };
+		CE0B69181BE36657006983F1 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B690E1BE36657006983F1 /* UITableViewCell.swift */; };
+		CE0B69191BE36657006983F1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B690F1BE36657006983F1 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,12 +60,11 @@
 		CE0B69071BE36657006983F1 /* BGBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGBaseViewController.swift; sourceTree = "<group>"; };
 		CE0B69081BE36657006983F1 /* BGConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGConstant.swift; sourceTree = "<group>"; };
 		CE0B69091BE36657006983F1 /* BGUtilFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGUtilFunction.swift; sourceTree = "<group>"; };
-		CE0B690B1BE36657006983F1 /* CGRect+BGExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+BGExtension.swift"; sourceTree = "<group>"; };
-		CE0B690C1BE36657006983F1 /* UICollectionViewCell+BGExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+BGExtension.swift"; sourceTree = "<group>"; };
-		CE0B690D1BE36657006983F1 /* UIImage+BGExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+BGExtension.swift"; sourceTree = "<group>"; };
-		CE0B690E1BE36657006983F1 /* UITableViewCell+BGExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+BGExtension.swift"; sourceTree = "<group>"; };
-		CE0B690F1BE36657006983F1 /* UIView+BGExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+BGExtension.swift"; sourceTree = "<group>"; };
-		CE0B69101BE36657006983F1 /* UIViewController+BGExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+BGExtension.swift"; sourceTree = "<group>"; };
+		CE0B690B1BE36657006983F1 /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
+		CE0B690C1BE36657006983F1 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
+		CE0B690D1BE36657006983F1 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		CE0B690E1BE36657006983F1 /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		CE0B690F1BE36657006983F1 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,12 +160,11 @@
 		CE0B690A1BE36657006983F1 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				CE0B690B1BE36657006983F1 /* CGRect+BGExtension.swift */,
-				CE0B690C1BE36657006983F1 /* UICollectionViewCell+BGExtension.swift */,
-				CE0B690D1BE36657006983F1 /* UIImage+BGExtension.swift */,
-				CE0B690E1BE36657006983F1 /* UITableViewCell+BGExtension.swift */,
-				CE0B690F1BE36657006983F1 /* UIView+BGExtension.swift */,
-				CE0B69101BE36657006983F1 /* UIViewController+BGExtension.swift */,
+				CE0B690B1BE36657006983F1 /* CGRect.swift */,
+				CE0B690C1BE36657006983F1 /* UICollectionViewCell.swift */,
+				CE0B690D1BE36657006983F1 /* UIImage.swift */,
+				CE0B690E1BE36657006983F1 /* UITableViewCell.swift */,
+				CE0B690F1BE36657006983F1 /* UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -302,18 +299,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE0B69181BE36657006983F1 /* UITableViewCell+BGExtension.swift in Sources */,
+				CE0B69181BE36657006983F1 /* UITableViewCell.swift in Sources */,
 				CE0B69141BE36657006983F1 /* BGUtilFunction.swift in Sources */,
-				CE0B69171BE36657006983F1 /* UIImage+BGExtension.swift in Sources */,
-				CE0B69191BE36657006983F1 /* UIView+BGExtension.swift in Sources */,
+				CE0B69171BE36657006983F1 /* UIImage.swift in Sources */,
+				CE0B69191BE36657006983F1 /* UIView.swift in Sources */,
 				CE0B69121BE36657006983F1 /* BGBaseViewController.swift in Sources */,
 				CE017CE71BCF753D0067FA49 /* ViewController.swift in Sources */,
 				CE0B69131BE36657006983F1 /* BGConstant.swift in Sources */,
-				CE0B69151BE36657006983F1 /* CGRect+BGExtension.swift in Sources */,
+				CE0B69151BE36657006983F1 /* CGRect.swift in Sources */,
 				CE017CE51BCF753D0067FA49 /* AppDelegate.swift in Sources */,
 				CE0B69111BE36657006983F1 /* BGBaseNavigationController.swift in Sources */,
-				CE0B69161BE36657006983F1 /* UICollectionViewCell+BGExtension.swift in Sources */,
-				CE0B691A1BE36657006983F1 /* UIViewController+BGExtension.swift in Sources */,
+				CE0B69161BE36657006983F1 /* UICollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
