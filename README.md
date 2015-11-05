@@ -1,14 +1,24 @@
 # BGFoundationKit
-##1、屏幕尺寸的常量
+#PodFile
+
+```
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+pod 'BGFoundationKit'
+```
+
+#内容：
+###1、屏幕尺寸的常量
 ```
  /// 屏幕bounds
-let MainScrrenBounds = UIScreen.mainScreen().bounds
+public let BGMainScrrenBounds = UIScreen.mainScreen().bounds
  /// 屏幕大小
-let MainScrrenSize = UIScreen.mainScreen().bounds.size
+public let BGMainScrrenSize = UIScreen.mainScreen().bounds.size
  /// 屏幕宽度
-let MainScreenWidth = UIScreen.mainScreen().bounds.width
+public let BGMainScreenWidth = UIScreen.mainScreen().bounds.width
  /// 屏幕高度
-let MainScreenHeight = UIScreen.mainScreen().bounds.height
+public let BGMainScreenHeight = UIScreen.mainScreen().bounds.height
 ```
 示例：
 
@@ -16,8 +26,8 @@ let MainScreenHeight = UIScreen.mainScreen().bounds.height
 let collectionView = UICollectionView(frame: CGRect(x: 0, y: 100, width: MainScreenWidth, height: MainScreenHeight-100), collectionViewLayout: layout)
 ```
 
-##2、工具方法
-####颜色
+###2、工具方法
+#####颜色：
 示例：
 
 ```
@@ -27,8 +37,8 @@ self.previewButton.setTitleColor(RGB(170, 170, 170), forState: UIControlState.No
 cell.imageView.backgroundColor = UIColorFromHexColor(0xFFFF00)
 ```
 
-##3、Extension
-####UIView+BGExtension.swift
+###3、Extension
+#####UIView.swift
 示例：
 
 ```
@@ -51,7 +61,7 @@ view.centerY = 150
 //加载以类名命名的xib文件
 let subView = UIView.loadFromXib()
 ```
-####CGRect+BGExtension.swift
+#####CGRect.swift
 ```
 //frame顶部
 view.frame.top = 100
@@ -72,19 +82,19 @@ view.frame.centerX = 100
 //frame中心点Y坐标
 view.frame.centerY = 150
 ```
-####UIImage+BGExtension.swift
+#####UIImage.swift
 ```
 //通过颜色生成一张图片
 let image = UIImage.image(RGB(248, 208, 15, 1.0)
 ```
-####UITableViewCell+BGExtension.swift
+#####UITableViewCell.swift
 ```
 //reuseIdentify，通过类名来获取cell的xib文件
 let cell: BGPhotoPreviewCell = collectionView.dequeueReusableCellWithReuseIdentifier(BGPhotoPreviewCell.reuseIdentify(), forIndexPath: indexPath) as! BGPhotoPreviewCell
 ```
 
-##4、Base
-####BGBaseViewController.swift
+###4、Base
+#####BGBaseViewController.swift
 默认ViewController不会加载xib文件，添加下面的初始化方法之后，就会自动加载控制器名的xib文件
 
 ```
