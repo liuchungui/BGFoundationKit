@@ -8,9 +8,5 @@
 
 import UIKit
 
-extension UICollectionViewCell {
-    /** 填充数据 */
-    func fillData(object: AnyObject? = nil){
-        
-    }
+public extension UICollectionViewCell {
 }

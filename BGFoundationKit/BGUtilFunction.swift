@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - color
-func RGB(r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ alpha: CGFloat = 1.0) -> UIColor{
+public func RGB(r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ alpha: CGFloat = 1.0) -> UIColor{
     return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: alpha)
 }
 
@@ -20,6 +20,6 @@ func RGB(r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ alpha: CGFloat = 1.0) -> UICo
  
  - returns: 返回颜色对象
  */
-func UIColorFromHexColor(hexColor: Int) ->UIColor {
+public func UIColorFromHexColor(hexColor: Int) ->UIColor {
     return UIColor(red: CGFloat((hexColor & 0xFF0000)>>16)/255.0, green: CGFloat((hexColor&0xFF00)>>8)/255.0, blue: CGFloat(hexColor&0xFF)/255.0, alpha: 1.0)
 }

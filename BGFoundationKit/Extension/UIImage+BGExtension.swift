@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIImage {
+public extension UIImage {
     /**
      类方法，通过颜色获取一张图片
      
@@ -17,7 +17,7 @@ extension UIImage {
      
      - returns: 返回一张图片
      */
-    static func image(color: UIColor, size: CGSize) -> UIImage{
+    public static func image(color: UIColor, size: CGSize) -> UIImage{
         let rect = CGRectMake(0, 0, size.width, size.height)
         UIGraphicsBeginImageContext(size)
         let context = UIGraphicsGetCurrentContext()

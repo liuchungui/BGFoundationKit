@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-enum BGNavigationBarStatus: Int {
+public enum BGNavigationBarStatus: Int {
     /** 系统默认 */
     case Default
     /** 不透明 */
@@ -25,12 +25,12 @@ enum BGNavigationBarStatus: Int {
 //私有常量
 private let kNavigationBarStatusKey = "kNavigationBarStatusKey"
 
-class BGBaseViewController: UIViewController {
+public class BGBaseViewController: UIViewController {
     //MARK: - property
     var navigationBarStatus: BGNavigationBarStatus
     /** 是否默认显示左边返回按钮 */
     private var isShowLeftBackButton: Bool = false
-    var showLeftBackButton: Bool {
+    public var showLeftBackButton: Bool {
         get {
             return isShowLeftBackButton
         }
@@ -58,23 +58,23 @@ class BGBaseViewController: UIViewController {
     }
     
     // MARK: - NSCoding protocol method
-    override func encodeWithCoder(aCoder: NSCoder) {
+    override public func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeInteger(self.navigationBarStatus.rawValue, forKey: kNavigationBarStatusKey)
         super.encodeWithCoder(aCoder)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         self.navigationBarStatus = BGNavigationBarStatus.Opaque
         super.init(coder: aDecoder)
     }
     
     // MARK: - view lifecycle
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         self.configureNavigationItem()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override public func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.configureNavigationBar()
     }
@@ -114,7 +114,7 @@ class BGBaseViewController: UIViewController {
     }
     
     /** 设置导航栏标题 */
-    func setNavTitle(title: String) {
+    public func setNavTitle(title: String) {
         let titleView = UIView(frame: CGRectMake(0, 0, MainScreenWidth, 44))
         
         let titleLabel = UILabel(frame: CGRectMake(0, 0, MainScreenWidth, 44))
@@ -143,19 +143,19 @@ class BGBaseViewController: UIViewController {
         self.navigationItem.titleView = titleView;
     }
     
-    func letBarButtonItem(normalImage: UIImage, action: Selector, selectImage:UIImage? = nil) -> UIBarButtonItem {
+    public func letBarButtonItem(normalImage: UIImage, action: Selector, selectImage:UIImage? = nil) -> UIBarButtonItem {
         return self.buttonItem("", action: action, titleColor: UIColor.whiteColor(), normalImage: normalImage, selectImage: nil, isLeftItem: true)
     }
     
-    func rightBarButtonItem(normalImage: UIImage, action: Selector, selectImage:UIImage? = nil) -> UIBarButtonItem {
+    public func rightBarButtonItem(normalImage: UIImage, action: Selector, selectImage:UIImage? = nil) -> UIBarButtonItem {
         return self.buttonItem("", action: action, titleColor: UIColor.whiteColor(), normalImage: normalImage, selectImage: nil, isLeftItem: false)
     }
     
-    func buttonItem(normalImage: UIImage, action: Selector, selectImage:UIImage? = nil, isLeftItem: Bool = true) -> UIBarButtonItem {
+    public func buttonItem(normalImage: UIImage, action: Selector, selectImage:UIImage? = nil, isLeftItem: Bool = true) -> UIBarButtonItem {
         return self.buttonItem("", action: action, titleColor: UIColor.whiteColor(), normalImage: normalImage, selectImage: nil, isLeftItem: isLeftItem)
     }
     
-    func buttonItem(title: String, action: Selector, titleColor:UIColor = UIColor.whiteColor(), normalImage: UIImage? = nil, selectImage:UIImage? = nil, isLeftItem: Bool = true) -> UIBarButtonItem {
+    public func buttonItem(title: String, action: Selector, titleColor:UIColor = UIColor.whiteColor(), normalImage: UIImage? = nil, selectImage:UIImage? = nil, isLeftItem: Bool = true) -> UIBarButtonItem {
         let button: UIButton = UIButton(type: UIButtonType.Custom)
         button.setTitle(title, forState: UIControlState.Normal)
         button.setTitleColor(titleColor, forState: UIControlState.Normal)
@@ -185,7 +185,7 @@ class BGBaseViewController: UIViewController {
         return buttonItem
     }
     
-    func leftNavigatioItemAction (){
+    public func leftNavigatioItemAction (){
         self.navigationController?.popViewControllerAnimated(true)
     }
 }

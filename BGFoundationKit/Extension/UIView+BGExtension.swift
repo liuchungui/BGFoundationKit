@@ -8,19 +8,19 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     /** 重用的标示，默认以类名为标示 */
-    class func reuseIdentify() -> String {
+    public class func reuseIdentify() -> String {
         return String(self)
     }
     
     /** 加载xib文件 */
-    static func loadFromXib() -> AnyObject {
+    public static func loadFromXib() -> AnyObject {
         let array = NSBundle.mainBundle().loadNibNamed(String(self), owner: self, options: nil)
         return array.first!
     }
     
-    var left: CGFloat {
+    public var left: CGFloat {
         get {
             return self.frame.origin.x
         }
@@ -29,7 +29,7 @@ extension UIView {
         }
     }
     
-    var right: CGFloat {
+    public var right: CGFloat {
         get {
             return self.frame.origin.x + self.frame.size.width
         }
@@ -38,7 +38,7 @@ extension UIView {
         }
     }
     
-    var top: CGFloat {
+    public var top: CGFloat {
         get {
             return self.frame.origin.y
         }
@@ -47,7 +47,7 @@ extension UIView {
         }
     }
     
-    var bottom: CGFloat {
+    public var bottom: CGFloat {
         get {
             return self.frame.origin.y + self.frame.size.height
         }
@@ -56,7 +56,7 @@ extension UIView {
         }
     }
     
-    var width: CGFloat {
+    public var width: CGFloat {
         get {
             return self.frame.size.width
         }
@@ -65,7 +65,7 @@ extension UIView {
         }
     }
     
-    var height: CGFloat {
+    public var height: CGFloat {
         get {
             return self.frame.size.height
         }
@@ -74,7 +74,7 @@ extension UIView {
         }
     }
     
-    var centerX: CGFloat {
+    public var centerX: CGFloat {
         get {
             return self.center.x
         }
@@ -83,7 +83,7 @@ extension UIView {
         }
     }
     
-    var centerY: CGFloat {
+    public var centerY: CGFloat {
         get {
             return self.center.y
         }

@@ -8,15 +8,15 @@
 
 import UIKit
 
-class BGBaseNavigationController: UINavigationController {
+public class BGBaseNavigationController: UINavigationController {
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

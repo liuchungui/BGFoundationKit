@@ -8,9 +8,9 @@
 
 import UIKit
 
-extension CGRect {
+public extension CGRect {
     
-    var left: CGFloat {
+    public var left: CGFloat {
         get {
             return self.origin.x
         }
@@ -19,7 +19,7 @@ extension CGRect {
         }
     }
     
-    var right: CGFloat {
+    public var right: CGFloat {
         get {
             return self.origin.x + self.size.width
         }
@@ -28,7 +28,7 @@ extension CGRect {
         }
     }
     
-    var top: CGFloat {
+    public var top: CGFloat {
         get {
             return self.origin.y
         }
@@ -37,7 +37,7 @@ extension CGRect {
         }
     }
     
-    var bottom: CGFloat {
+    public var bottom: CGFloat {
         get {
             return self.origin.y + self.size.height
         }
@@ -46,7 +46,7 @@ extension CGRect {
         }
     }
     
-    var width: CGFloat {
+    public var width: CGFloat {
         get {
             return self.size.width
         }
@@ -55,7 +55,7 @@ extension CGRect {
         }
     }
     
-    var height: CGFloat {
+    public var height: CGFloat {
         get {
             return self.size.height
         }
@@ -64,7 +64,7 @@ extension CGRect {
         }
     }
     
-    var center: CGPoint {
+    public var center: CGPoint {
         get {
             return CGPointMake(self.origin.x+self.size.width/2.0, self.origin.y+self.size.height/2.0)
         }
@@ -73,7 +73,7 @@ extension CGRect {
         }
     }
     
-    var centerX: CGFloat {
+    public var centerX: CGFloat {
         get {
             return self.origin.x+self.size.width/2.0
         }
@@ -82,7 +82,7 @@ extension CGRect {
         }
     }
     
-    var centerY: CGFloat {
+    public var centerY: CGFloat {
         get {
             return self.origin.y+self.size.height/2.0
         }

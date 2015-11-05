@@ -8,13 +8,13 @@
 
 import UIKit
 
-extension UITableViewCell {
+public extension UITableViewCell {
     /** 填充数据 */
-    func fillData(object: AnyObject? = nil){
+    public func fillData(object: AnyObject? = nil){
         
     }
     /** 行高 */
-    func rowHeight(object: AnyObject? = nil) -> CGFloat{
+    public func rowHeight(object: AnyObject? = nil) -> CGFloat{
         return 44.0
     }
 }

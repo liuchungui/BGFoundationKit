@@ -8,6 +8,6 @@
 
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
 
 }
