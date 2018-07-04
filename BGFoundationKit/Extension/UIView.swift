@@ -11,13 +11,13 @@ import UIKit
 public extension UIView {
     /** 重用的标示，默认以类名为标示 */
     public class func reuseIdentify() -> String {
-        return String(self)
+        return String(describing: type(of:self))
     }
     
     /** 加载xib文件 */
-    public static func loadFromXib() -> AnyObject {
-        let array = NSBundle.mainBundle().loadNibNamed(String(self), owner: self, options: nil)
-        return array.first!
+    public static func loadFromXib() -> Any {
+        let array = Bundle.main.loadNibNamed(String(describing: type(of:self)), owner: self, options: nil)
+        return array!
     }
     
     public var left: CGFloat {
