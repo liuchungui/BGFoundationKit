@@ -37,7 +37,7 @@ public class BGBaseViewController: UIViewController {
         }
         set (newValue) {
             isShowLeftBackButton = newValue
-            if self.isViewLoaded() {
+            if self.isViewLoaded {
                 self.configureNavigationItem()
             }
         }
@@ -47,7 +47,7 @@ public class BGBaseViewController: UIViewController {
     /**
     导航栏选择默认状态
     */
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.navigationBarStatus = BGNavigationBarStatus.Default
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -57,17 +57,17 @@ public class BGBaseViewController: UIViewController {
     */
     convenience init() {
         /// 初始化方法获取类名，只能通过dynamicType获取
-        var nibNameOrNil: String? = String(self.dynamicType)
-        if NSBundle.mainBundle().pathForResource(String(self.dynamicType), ofType: "nib") == nil {
+        var nibNameOrNil: String? = type(of: self).description()
+        if Bundle.main.path(forResource: type(of: self).description(), ofType: "nib") == nil {
             nibNameOrNil = nil
         }
         self.init(nibName: nibNameOrNil, bundle: nil)
     }
     
     // MARK: - NSCoding protocol method
-    override public func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeInteger(self.navigationBarStatus.rawValue, forKey: kNavigationBarStatusKey)
-        super.encodeWithCoder(aCoder)
+    override public func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.navigationBarStatus.rawValue, forKey: kNavigationBarStatusKey)
+        super.encode(with: aCoder)
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -81,7 +81,7 @@ public class BGBaseViewController: UIViewController {
         self.configureNavigationItem()
     }
     
-    override public func viewWillAppear(animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.configureNavigationBar()
     }
@@ -94,18 +94,18 @@ public class BGBaseViewController: UIViewController {
             self.navigationController?.setNavigationBarHidden(true, animated: true)
         case .Opaque:
             self.navigationController?.setNavigationBarHidden(false, animated: true)
-            self.navigationController?.navigationBar.translucent = false
-            self.edgesForExtendedLayout = UIRectEdge.None
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage.image(RGB(248, 208, 15, 1.0), size: CGSizeMake(BGMainScreenWidth, 128)), forBarMetrics: UIBarMetrics.Default)
+            self.navigationController?.navigationBar.isTranslucent = false
+            self.edgesForExtendedLayout = []
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage.image(RGB(248, 208, 15, 1.0), CGSizeMake(BGMainScreenWidth, 128)), for: UIBarMetrics.default)
         case .Translucent, .Transparent:
             self.navigationController?.setNavigationBarHidden(false, animated: true)
-            self.navigationController?.navigationBar.translucent = true
-            self.edgesForExtendedLayout = UIRectEdge.All
+            self.navigationController?.navigationBar.isTranslucent = true
+            self.edgesForExtendedLayout = UIRectEdge.all
             var alpha = CGFloat(0)
             if self.navigationBarStatus == BGNavigationBarStatus.Translucent {
                 alpha = 0.3
             }
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage.image(RGB(0, 0, 0, alpha), size: CGSizeMake(BGMainScreenWidth, 128)), forBarMetrics: UIBarMetrics.Default)
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage.image(RGB(0, 0, 0, alpha), CGSizeMake(BGMainScreenWidth, 128)), for: UIBarMetrics.default)
         default:
             break
         }
@@ -113,7 +113,7 @@ public class BGBaseViewController: UIViewController {
     
     func configureNavigationItem() {
         if self.showLeftBackButton {
-            self.navigationItem.leftBarButtonItem = self.letBarButtonItem(UIImage(named:"nav_back.png")!, action: Selector("leftNavigatioItemAction"))
+            self.navigationItem.leftBarButtonItem = self.letBarButtonItem(UIImage(named:"nav_back.png")!, #selector(leftNavigatioItemAction))
         }
         else {
             self.navigationItem.leftBarButtonItem = nil
@@ -125,10 +125,10 @@ public class BGBaseViewController: UIViewController {
         let titleView = UIView(frame: CGRectMake(0, 0, BGMainScreenWidth, 44))
         
         let titleLabel = UILabel(frame: CGRectMake(0, 0, BGMainScreenWidth, 44))
-        titleLabel.textColor = UIColor.whiteColor()
-        titleLabel.font = UIFont.systemFontOfSize(18)
-        titleLabel.lineBreakMode = NSLineBreakMode.ByTruncatingTail
-        titleLabel.textAlignment = NSTextAlignment.Center
+        titleLabel.textColor = UIColor.white
+        titleLabel.font = UIFont.systemFont(ofSize: 18)
+        titleLabel.lineBreakMode = NSLineBreakMode.byTruncatingTail
+        titleLabel.textAlignment = NSTextAlignment.center
         
         let width = titleLabel.sizeThatFits(CGSizeMake(BGMainScreenWidth, 44)).width
         let maxWidth = CGFloat(120)
@@ -150,30 +150,30 @@ public class BGBaseViewController: UIViewController {
         self.navigationItem.titleView = titleView;
     }
     
-    public func letBarButtonItem(normalImage: UIImage, action: Selector, selectImage:UIImage? = nil) -> UIBarButtonItem {
-        return self.buttonItem("", action: action, titleColor: UIColor.whiteColor(), normalImage: normalImage, selectImage: nil, isLeftItem: true)
+    public func letBarButtonItem(_ normalImage: UIImage, _ action: Selector, _ selectImage:UIImage? = nil) -> UIBarButtonItem {
+        return self.buttonItem("", action: action, titleColor: UIColor.white, normalImage: normalImage, selectImage: nil, isLeftItem: true)
     }
     
     public func rightBarButtonItem(normalImage: UIImage, action: Selector, selectImage:UIImage? = nil) -> UIBarButtonItem {
-        return self.buttonItem("", action: action, titleColor: UIColor.whiteColor(), normalImage: normalImage, selectImage: nil, isLeftItem: false)
+        return self.buttonItem("", action: action, titleColor: UIColor.white, normalImage: normalImage, selectImage: nil, isLeftItem: false)
     }
     
     public func buttonItem(normalImage: UIImage, action: Selector, selectImage:UIImage? = nil, isLeftItem: Bool = true) -> UIBarButtonItem {
-        return self.buttonItem("", action: action, titleColor: UIColor.whiteColor(), normalImage: normalImage, selectImage: nil, isLeftItem: isLeftItem)
+        return self.buttonItem("", action: action, titleColor: UIColor.white, normalImage: normalImage, selectImage: nil, isLeftItem: isLeftItem)
     }
     
-    public func buttonItem(title: String, action: Selector, titleColor:UIColor = UIColor.whiteColor(), normalImage: UIImage? = nil, selectImage:UIImage? = nil, isLeftItem: Bool = true) -> UIBarButtonItem {
-        let button: UIButton = UIButton(type: UIButtonType.Custom)
-        button.setTitle(title, forState: UIControlState.Normal)
-        button.setTitleColor(titleColor, forState: UIControlState.Normal)
-        button.titleLabel?.font = UIFont.systemFontOfSize(18.0)
-        button.exclusiveTouch = true
-        button.addTarget(self, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+    public func buttonItem(_ title: String, action: Selector, titleColor:UIColor = UIColor.white, normalImage: UIImage? = nil, selectImage:UIImage? = nil, isLeftItem: Bool = true) -> UIBarButtonItem {
+        let button: UIButton = UIButton(type: UIButtonType.custom)
+        button.setTitle(title, for: UIControlState.normal)
+        button.setTitleColor(titleColor, for: UIControlState.normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        button.isExclusiveTouch = true
+        button.addTarget(self, action: action, for: UIControlEvents.touchUpInside)
         if let image = normalImage {
-            button.setImage(image, forState: UIControlState.Normal)
+            button.setImage(image, for: UIControlState.normal)
         }
         if let image = selectImage {
-            button.setImage(image, forState: UIControlState.Highlighted)
+            button.setImage(image, for: UIControlState.highlighted)
         }
         //设置frame
         let buttonSize = button.sizeThatFits(CGSize(width: BGMainScreenWidth, height: 44.0))
@@ -192,7 +192,7 @@ public class BGBaseViewController: UIViewController {
         return buttonItem
     }
     
-    public func leftNavigatioItemAction (){
-        self.navigationController?.popViewControllerAnimated(true)
+    @objc public func leftNavigatioItemAction (){
+        self.navigationController?.popViewController(animated: true)
     }
 }

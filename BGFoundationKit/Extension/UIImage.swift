@@ -17,14 +17,14 @@ public extension UIImage {
      
      - returns: 返回一张图片
      */
-    public static func image(color: UIColor, size: CGSize) -> UIImage{
+    public static func image(_ color: UIColor, _ size: CGSize) -> UIImage{
         let rect = CGRectMake(0, 0, size.width, size.height)
         UIGraphicsBeginImageContext(size)
         let context = UIGraphicsGetCurrentContext()
-        CGContextSetFillColorWithColor(context, color.CGColor)
-        CGContextFillRect(context, rect)
+        context?.setFillColor(color.cgColor)
+        context?.fill(rect)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return image
+        return image!
     }
 }
